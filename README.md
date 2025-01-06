@@ -1,5 +1,5 @@
 #  <img height="50" src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png"> EĞİTİM KAMPI
-👋 Merhabalar, oluşturmuş olduğum bu repo, Murat Yücedağ hocamızın YouTube üzerinden hazırlamış olduğu C# Eğitim Kampı süresince tamamlamış olduğum projeleri içermektedir. Bu eğitimde bir tane Finansal CRM Projesi anlatılmaktadır.
+👋 Merhabalar, oluşturmuş olduğum bu repo, Murat Yücedağ hocamızın YouTube üzerinden hazırlamış olduğu C# Eğitim Kampı süresince tamamlamış olduğum projeleri içermektedir. Bu eğitimde Finansal CRM Projesi anlatılmaktadır.
 
 İlk olarak Microsoft SQL Server'i açıyoruz ve bir tane veri tabanı oluşturuyoruz. Veri tabanımızın ismini FinancialCrmDb olarak belirledik.
 
