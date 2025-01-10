@@ -77,4 +77,114 @@ Başlangıçta bize verilen Form1'in ismini FrmDashboard olarak değiştirdik ve
 
 ![image](https://github.com/user-attachments/assets/03efa6a7-abf7-48e6-b8a9-e924ae96f6c2)
 
-FrmBanks formumuzun tasarımını bu şekilde ayarladık.
+FrmBanks formumuzun tasarımını bu şekilde ayarladık. Sol tarafta bulunan kategoriler, bankalar gibi işlemler "Button", bankalar ve üzerinde bulunan bakiyeler tablosundaki araç "Panel" ve GroupBox araçları kullanıldı.
+
+Katmanımıza gelerek Models isminde yeni bir klasör oluşturuyoruz.
+
+Models klasörüne sağ tıklayıp Add kısmından New Item diyoruz.
+
+![image](https://github.com/user-attachments/assets/e4259796-7a7f-4384-ae03-1393f3b032bb)
+
+Sol tarafta yer alan seçeneklerden Data olanı seçiyoruz ve ilk çıkan ADO.NET Entity Data Model'ini seçiyoruz.
+
+![image](https://github.com/user-attachments/assets/cb9474a7-f3ee-4f28-a965-e0f1dcb6f547)
+
+İlk baştaki seçili gelecektir. Next diyoruz.
+
+![image](https://github.com/user-attachments/assets/8c5b28b1-dbd6-4d2f-a39a-f66b91748505)
+
+New Connection diyoruz.
+
+![image](https://github.com/user-attachments/assets/8d8bf3e6-8c21-4315-8f05-7e37bf1b14bc)
+
+Server name kısmına kendi SQL serverimizi giriyoruz. Eğer SQL Express son sürümünü kullanıyorsanız burada Trust Server Certificate kısmını seçmelisiniz. Ardından hangi veri tabanıyla çalışacaksak onu seçiyoruz. Burada FinancialCrmDb adlı veri tabanımızı seçiyoruz ve OK diyoruz.
+
+![image](https://github.com/user-attachments/assets/8cf01bee-7239-4c1e-b7ca-16b1508388fa)
+
+Veri tabanı modelimize ait bağlantıyı oluşturduktan sonra Next diyoruz.
+
+![image](https://github.com/user-attachments/assets/0c454ee3-a2f3-43dc-8d03-20fc28107c54)
+
+Entity Framework 6.x seçili gelecektir. Next diyoruz.
+
+![image](https://github.com/user-attachments/assets/18dfdb7e-d7a3-47f8-a46c-e8b3dc1229a9)
+
+Burada Tables kısmındaki bütün alanları seçtikten sonra Finish diyoruz.
+
+![image](https://github.com/user-attachments/assets/735d6983-113c-4a2f-a868-8b61494f3d7f)
+
+Modelimiz hazır. Artık kaydedebiliriz.
+
+![image](https://github.com/user-attachments/assets/743363e0-e854-4613-82f5-a59d96665ef5)
+
+FrmBanks formuna tıklayarak kodlarımızı yazmaya başlıyoruz. Burada ilk olarak oluşturduğumuz modelin ismini (FinancialCrmDbEntities) yazıyoruz. Burada form yüklendiği zaman bankalara ait bakiyelerin görüntülenmesini istiyoruz.
+
+![image](https://github.com/user-attachments/assets/fc7e9cf9-1c87-4568-a2f4-de3e3072cc0f)
+
+Burada yer alan kodları formun Load kısmına yazıyoruz. Burada var türünden tek tek değişkenleri tanımlıyoruz. Değişkenleri tanımladıktan sonra Banks tablosunu seçerek "Where" şartını kullanıyoruz. Buradaki amaç SQL'de oluşturduğumuz BankTitle sütununa karşılık gelen değerin ismi nasıl yazıldıysa aynısını buraya yazıyoruz. Örneğin SQL'de "Ziraat Bankası" diye yazarsak buradaki kod kısmında da aynısını yazmamız gerekecektir. Eğer BankTitle değerin ismi doğruysa Select fonksiyonunu kullanarak bakiyeyi görüntülemek istediğimiz sütun olan "BankBalance" seçiyoruz. Burada tek bir değeri göstereceğimiz için FirstOrDefault fonksiyonunu kullanıyoruz. Aynı şekilde diğer bankaların bakiyelerini göstermek için aynı kodları uyguluyoruz ve en sonda label araçlarına yazdırıyoruz.
+
+![image](https://github.com/user-attachments/assets/f7a81f3a-e812-4819-9b57-a07d0e6e6cbd)
+
+Programı çalıştırdığımız zaman bakiyeler bu şekilde görüntülenecektir. Bakiyeleri başlangıçta SQL tablosundaki değerleri kendimiz belirledik.
+
+![image](https://github.com/user-attachments/assets/26c7ccf3-8e32-4d7d-a80b-cfe27e1d00b0)
+
+Formumuzda daha önceden bir tane GroupBox oluşturmuştuk. Buradaki amacımız son 5 banka hareketini göstermeye çalışacağız. Buradaki Metin 1, 2 gibi labellara isimler belirledik.
+
+![image](https://github.com/user-attachments/assets/97657e45-1367-4363-ac85-4083203058ff)
+
+Burada var türünden bankProcess1 isminde bir değişken oluşturduk. Amacımız en son yapılan banka işlemini getirmektir. Buradan BankProcess sütununu seçip en son sıradakini göstereceğimiz için ID değerini alıyoruz ve OrderByDescending fonksiyonunu kullanıyoruz. Ardından Take fonksiyonunu kullanarak sadece bir tane göstereceğimiz için 1 diyoruz ve FirstOrDefault fonksiyonunu ekliyoruz. Label'a yazdırmak istediğimizde buradan istediğimiz sütunları alıyoruz. Burada açıklamayı, miktarı ve tarihi aldık.
+
+![image](https://github.com/user-attachments/assets/9883b4d2-d7e7-4bab-a30f-f1f8a89d86c0)
+
+Bir sonraki değeri göstermek için burada Take fonksiyonundan son 2 değeri alsak da burada Skip fonksiyonunu kullandık. Burada Skip dedikten sonra 1 dememizin sebebi son değeri bize göstermeyecektir.
+
+![image](https://github.com/user-attachments/assets/dcc74b3b-2cfa-4d08-a776-fa201abab2d8)
+
+Banka Hareketleri için kodlar bu şekildedir.
+
+![image](https://github.com/user-attachments/assets/f249aa59-432d-4564-9a4e-98fdc0e33204)
+
+Programı çalıştırdığımız zaman bize son 5 banka hareketlerini görüntüleyecektir.
+
+FrmBilling isminde yeni bir form oluşturuyoruz.
+
+![image](https://github.com/user-attachments/assets/9cb9189a-7d99-45cc-a5f8-3c6b31ace52e)
+
+FrmBilling formunu bu şekilde oluşturduk. Burada Bills tablosuna ait olan sütunları ekleyeceğiz. Burada Label,TextBox,Button ve DataGridView araçlarını kullandık.
+
+![image](https://github.com/user-attachments/assets/aced95eb-a49e-494d-8a2b-d84d9fe98ca6)
+
+Faturaları DataGridView'de listeleme işlemi için gerekli kodlarımızı yazdık. Hem Form Load kısmına, hem de Ödeme Listesi butonuna yazıyoruz.
+
+![image](https://github.com/user-attachments/assets/cc406b88-5af6-457b-9609-8324a550b918)
+
+Form yüklendiği zaman DataGridView'e faturalara ait listeyi görüntüleyecektir.
+
+![image](https://github.com/user-attachments/assets/cb6cf2c1-2487-4960-93d1-9031c039278d)
+
+Yeni bir ödeme oluşturmak için gerekli kodlarımızı yazdık. Burada string, decimal türünde olan değerleri ilgili TextBox'a atadık. Ardından Bills tablosuna ait yeni bir sınıf oluşturduk. Oluşturduğumuz bu sınıfı aynı şekilde ilgili olan sütunlara karşılık gelen TextBox değerlerine tek tek atamalarımızı yapıyoruz. Ekleme işlemi için Add metodunu kullandıktan sonra kaydetmek için SaveChanges metodunu kullanıyoruz.
+
+![image](https://github.com/user-attachments/assets/9b162111-5d1a-4868-a5d1-7558251c0c98)
+
+Yeni bir fatura girişi yaptıktan sonra değerleri doğru girdiğimizde bizi bir mesajla karşılayacaktır.
+
+![image](https://github.com/user-attachments/assets/91c299ea-ff5f-4e46-b541-20ebd53d28cf)
+
+Silme işlemi için ID değerini bulmamız gerekir. Burada int türünden id isminde bir değişken oluşturduktan sonra ilgili TextBox'a atadık. Ardından removeValue isminde bir değişken oluşturup id değerini bulduruyoruz. Değeri buldurduktan sonra silme işlemi için Remove metodunu kullanıyoruz ve en sonunda SaveChanges metodunu kullanıyoruz.
+
+![image](https://github.com/user-attachments/assets/60f4176a-6448-4ccd-8061-171af4059639)
+
+Buradan id değerini 4 girdikten sonra Ödeme Sil butonuna bastığımızda bizi bir mesajla karşılayacaktır. Tamam dedikten sonra veri silinecektir.
+
+![image](https://github.com/user-attachments/assets/4667edb2-087e-4a34-8a81-4dc822c29978)
+
+Güncelleme işlemi için tek tek değerlere TextBox'a atıyoruz. Ardından id değerini buldurmaya çalıştıktan sonra tek tek değerleri ilgili sütunlara eşleştiriyoruz ve SaveChanges metodunu kullanıyoruz.
+
+![image](https://github.com/user-attachments/assets/be2d06d2-8f47-4aab-8703-506a3a8c0cff)
+
+Buradaki değeri güncellemek için önce ID değerini giriyoruz, ardından değiştirmek istediğimiz değerleri giriyoruz ve güncelle dedikten sonra ilgili veriler güncellenecektir.
+
+![image](https://github.com/user-attachments/assets/eeee82c9-2068-465b-8d0f-9da87de6bbc7)
+
+FrmBilling formundan FrmBanks formuna gidebilmek için sol tarafta yer alan Bankalar butonuna tıkladığımız zaman yazacağımız kodlar bu şekilde olacaktır. Buradan ilk önce FrmBanks formundan bir tane fr değişkeni oluşturuyoruz. Ardından formu göstermek için Show metodunu kullanıyoruz ve en sonda FrmBilling formunu gizlemesi için this.Hide metodunu kullanıyoruz.
