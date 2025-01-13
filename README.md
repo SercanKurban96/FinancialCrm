@@ -188,3 +188,57 @@ Buradaki değeri güncellemek için önce ID değerini giriyoruz, ardından değ
 ![image](https://github.com/user-attachments/assets/eeee82c9-2068-465b-8d0f-9da87de6bbc7)
 
 FrmBilling formundan FrmBanks formuna gidebilmek için sol tarafta yer alan Bankalar butonuna tıkladığımız zaman yazacağımız kodlar bu şekilde olacaktır. Buradan ilk önce FrmBanks formundan bir tane fr değişkeni oluşturuyoruz. Ardından formu göstermek için Show metodunu kullanıyoruz ve en sonda FrmBilling formunu gizlemesi için this.Hide metodunu kullanıyoruz.
+
+Daha önceden oluşturduğumuz FrmDashboard formuna geliyoruz ve tasarımlarımızı yapıyoruz.
+
+![image](https://github.com/user-attachments/assets/b84fe8e2-4e07-4a85-b778-205ec20ca231)
+
+Burada Toplam Bakiyem, Fatura Başlığı ve Gelen Son Havaleyi formun Load kısmında görüntüleyeceğiz. Burada Timer adında yeni bir araç tanımladık. Timer aracına tıkladığımız zaman özellikler penceresinden ilk olarak Enabled kısmı false olarak gelecektir. Enabled kısmını true yapıyoruz ve Interval değerini 100 yerine 1000 olarak belirliyoruz.
+
+Form yüklendiği zaman yazacağımız kodlar şunlardır.
+
+![image](https://github.com/user-attachments/assets/990e0f23-7331-436a-b4be-f6049394ffad)
+
+İlk önce global alana entities'i belirliyoruz.
+
+![image](https://github.com/user-attachments/assets/90bee470-6ee4-4811-819a-bbc93764e27c)
+
+Toplam bakiyeyi görüntülemek için gerekli kodlar bu şekildedir. Burada var türünden totalBalance değişkeni tanımlıyoruz. Ardından Banks tablosundan Sum metodunu kullanarak BankBalance olanı seçiyoruz ve label'a yazdırıyoruz.
+
+![image](https://github.com/user-attachments/assets/ef5b9c9d-1458-4c58-a9ad-8ae91b552f7e)
+
+![image](https://github.com/user-attachments/assets/af8ab247-ce96-4903-9182-7e4cf8c14062)
+
+İkinci işlemimiz ise Fatura Başlığı olacaktır. Buradaki amaç, her saniyede farklı fatura başlığı ve miktarını görüntüleyecektir.
+
+![image](https://github.com/user-attachments/assets/4839333f-4d5d-4736-afd2-aa5fa94b7a7b)
+
+Üçüncüsü ve son kısım olan Gelen Son Havale işlemi için gerekli kodlar bu şekildedir. Burada OrderByDescending metodu kullanılarak en sondan başlayarak ilk değere kadar olan değerleri almasını sağlar, ancak burada Take metodunu kullandık. Take metodundan sonra bir sayı belirlersek sadece o değere kadar alır. Burada 1 dediğimiz için sadece 1 değer alacaktır.
+
+![image](https://github.com/user-attachments/assets/da1c8fff-0bf2-4f88-95fa-99766f856105)
+
+Programı çalıştırdığımız zaman fatura başlığı her saniye değişecektir.
+
+![image](https://github.com/user-attachments/assets/a8ba94bf-bf86-4b9f-ac76-30da184319c8)
+
+Bu kez FrmDashboard formumuza 2 tane Chart aracı ekledik. Buradadki amaç, form yüklendiği zaman grafiğin üzerinde yer alan metne göre grafiklerimizi oluşturacağız.
+
+![image](https://github.com/user-attachments/assets/4515bbb4-a3dd-4c4a-89dc-75c64f63ffec)
+
+Buradaki kodları Form Load kısmına yazıyoruz. Burada var türünden bankData isminde bir değişken oluşturup Banks tablosundan Select metodunu uyguluyoruz. Daha sonra seçmek istediğimiz alanları yazıyoruz. Ardından başlangıçta Chart aracını eklediğimizde grafiğin sağında Series1 olarak yazacaktır. Bunun için kod kısmında ilk olarak chart1.Series.Clear() metodunu uyguluyoruz. Daha sonra var türünden series isminde bir değişken oluşturup ekleme işlemini uyguluyoruz ve ismini Series1 olarak belirliyoruz. Daha sonra burada bir foreach döngüsü oluşturup grafiğe ait olan değerlerin konumlarını belirliyoruz. Burada önce Points daha sonra AddXY dememizin sebebi her iki sütunu da eklememiz gerektiğini belirtmektedir. X olan kısım BankTitle, Y olan kısım ise BankBalance'ı temsil etmektedir.
+
+![image](https://github.com/user-attachments/assets/6fbbda08-7dc3-4fbc-a804-a60a6097a7ff)
+
+Programımızı çalıştırdığımız zaman grafik karşımıza bu şekilde çıkacaktır.
+
+![image](https://github.com/user-attachments/assets/b0f7e275-07fc-49b0-a927-3777d632a42a)
+
+İkinci grafik için bu kez formumuza gidip ikinci grafiğe bir kez tıkladıktan sonra sağ köşede yer alan özellikler penceresinden Series yazan kısmın (Collection) yanındaki üç noktaya tıklıyoruz. 
+
+![image](https://github.com/user-attachments/assets/90398082-cfd3-4bd5-aeaf-c25591b0dbfd)
+
+Buradan isterseniz grafiğin tipini ChartType kısmından, grafiğin ismini ise Name kısmından değiştirebilirsiniz.
+
+![image](https://github.com/user-attachments/assets/79abb0c6-81f0-4d68-8637-745ac9c2a938)
+
+İkinci grafik için gerekli kodlar bu şekildedir. Buradaki tek fark, eğer series2.ChartType kodu yazılmazsa, programı çalıştırdığımız zaman direkt Chart aracındaki gibi sütun grafiğini gösterecektir. Burada sadece grafiğin türünü değiştirmek için bu kodu kullandık.
