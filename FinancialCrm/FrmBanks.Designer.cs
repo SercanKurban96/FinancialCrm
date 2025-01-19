@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.frmBillForm = new System.Windows.Forms.Button();
-            this.frmBillingForm = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSettingsForm = new System.Windows.Forms.Button();
+            this.btnDashboardForm = new System.Windows.Forms.Button();
+            this.btnBankProcessForm = new System.Windows.Forms.Button();
+            this.btnSpendingForm = new System.Windows.Forms.Button();
+            this.btnBillingForm = new System.Windows.Forms.Button();
             this.btnBanksForm = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnCategoryForm = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblZiraatBankBalance = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +46,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblIsBankasiBalance = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpSon5BankaHareketi = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,107 +57,119 @@
             this.lblBankProcess2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblBankProcess1 = new System.Windows.Forms.Label();
+            this.lblBankaFormu = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpSon5BankaHareketi.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(84)))), ((int)(((byte)(128)))));
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.frmBillForm);
-            this.panel1.Controls.Add(this.frmBillingForm);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnSettingsForm);
+            this.panel1.Controls.Add(this.btnDashboardForm);
+            this.panel1.Controls.Add(this.btnBankProcessForm);
+            this.panel1.Controls.Add(this.btnSpendingForm);
+            this.panel1.Controls.Add(this.btnBillingForm);
             this.panel1.Controls.Add(this.btnBanksForm);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCategoryForm);
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 597);
             this.panel1.TabIndex = 0;
             // 
-            // button8
+            // btnExit
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(41, 520);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(206, 48);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Çıkış Yap";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(41, 520);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(206, 48);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Çıkış Yap";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // button7
+            // btnSettingsForm
             // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(41, 450);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(206, 48);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Ayarlar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnSettingsForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettingsForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettingsForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSettingsForm.ForeColor = System.Drawing.Color.White;
+            this.btnSettingsForm.Location = new System.Drawing.Point(41, 450);
+            this.btnSettingsForm.Name = "btnSettingsForm";
+            this.btnSettingsForm.Size = new System.Drawing.Size(206, 48);
+            this.btnSettingsForm.TabIndex = 6;
+            this.btnSettingsForm.Text = "Ayarlar";
+            this.btnSettingsForm.UseVisualStyleBackColor = true;
+            this.btnSettingsForm.Click += new System.EventHandler(this.btnSettingsForm_Click);
             // 
-            // button6
+            // btnDashboardForm
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(41, 380);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(206, 48);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Dashboard";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnDashboardForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboardForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboardForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDashboardForm.ForeColor = System.Drawing.Color.White;
+            this.btnDashboardForm.Location = new System.Drawing.Point(41, 380);
+            this.btnDashboardForm.Name = "btnDashboardForm";
+            this.btnDashboardForm.Size = new System.Drawing.Size(206, 48);
+            this.btnDashboardForm.TabIndex = 5;
+            this.btnDashboardForm.Text = "Dashboard";
+            this.btnDashboardForm.UseVisualStyleBackColor = true;
+            this.btnDashboardForm.Click += new System.EventHandler(this.btnDashboardForm_Click);
             // 
-            // button5
+            // btnBankProcessForm
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(41, 310);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(206, 48);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Banka Hareketleri";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBankProcessForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBankProcessForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBankProcessForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBankProcessForm.ForeColor = System.Drawing.Color.White;
+            this.btnBankProcessForm.Location = new System.Drawing.Point(41, 310);
+            this.btnBankProcessForm.Name = "btnBankProcessForm";
+            this.btnBankProcessForm.Size = new System.Drawing.Size(206, 48);
+            this.btnBankProcessForm.TabIndex = 4;
+            this.btnBankProcessForm.Text = "Banka Hareketleri";
+            this.btnBankProcessForm.UseVisualStyleBackColor = true;
+            this.btnBankProcessForm.Click += new System.EventHandler(this.btnBankProcessForm_Click);
             // 
-            // frmBillForm
+            // btnSpendingForm
             // 
-            this.frmBillForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.frmBillForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.frmBillForm.ForeColor = System.Drawing.Color.White;
-            this.frmBillForm.Location = new System.Drawing.Point(41, 240);
-            this.frmBillForm.Name = "frmBillForm";
-            this.frmBillForm.Size = new System.Drawing.Size(206, 48);
-            this.frmBillForm.TabIndex = 3;
-            this.frmBillForm.Text = "Giderler";
-            this.frmBillForm.UseVisualStyleBackColor = true;
-            this.frmBillForm.Click += new System.EventHandler(this.frmBillForm_Click);
+            this.btnSpendingForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSpendingForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpendingForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSpendingForm.ForeColor = System.Drawing.Color.White;
+            this.btnSpendingForm.Location = new System.Drawing.Point(41, 240);
+            this.btnSpendingForm.Name = "btnSpendingForm";
+            this.btnSpendingForm.Size = new System.Drawing.Size(206, 48);
+            this.btnSpendingForm.TabIndex = 3;
+            this.btnSpendingForm.Text = "Giderler";
+            this.btnSpendingForm.UseVisualStyleBackColor = true;
+            this.btnSpendingForm.Click += new System.EventHandler(this.btnSpendingForm_Click);
             // 
-            // frmBillingForm
+            // btnBillingForm
             // 
-            this.frmBillingForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.frmBillingForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.frmBillingForm.ForeColor = System.Drawing.Color.White;
-            this.frmBillingForm.Location = new System.Drawing.Point(41, 170);
-            this.frmBillingForm.Name = "frmBillingForm";
-            this.frmBillingForm.Size = new System.Drawing.Size(206, 48);
-            this.frmBillingForm.TabIndex = 2;
-            this.frmBillingForm.Text = "Faturalar";
-            this.frmBillingForm.UseVisualStyleBackColor = true;
-            this.frmBillingForm.Click += new System.EventHandler(this.frmBillingForm_Click);
+            this.btnBillingForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBillingForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBillingForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBillingForm.ForeColor = System.Drawing.Color.White;
+            this.btnBillingForm.Location = new System.Drawing.Point(41, 170);
+            this.btnBillingForm.Name = "btnBillingForm";
+            this.btnBillingForm.Size = new System.Drawing.Size(206, 48);
+            this.btnBillingForm.TabIndex = 2;
+            this.btnBillingForm.Text = "Faturalar";
+            this.btnBillingForm.UseVisualStyleBackColor = true;
+            this.btnBillingForm.Click += new System.EventHandler(this.btnBillingForm_Click);
             // 
             // btnBanksForm
             // 
+            this.btnBanksForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBanksForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanksForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBanksForm.ForeColor = System.Drawing.Color.White;
@@ -169,39 +179,21 @@
             this.btnBanksForm.TabIndex = 1;
             this.btnBanksForm.Text = "Bankalar";
             this.btnBanksForm.UseVisualStyleBackColor = true;
+            this.btnBanksForm.Click += new System.EventHandler(this.btnBanksForm_Click);
             // 
-            // button1
+            // btnCategoryForm
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(41, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Kategoriler";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(114)))), ((int)(((byte)(227)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1320, 54);
-            this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Banka Formu";
+            this.btnCategoryForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCategoryForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoryForm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCategoryForm.ForeColor = System.Drawing.Color.White;
+            this.btnCategoryForm.Location = new System.Drawing.Point(41, 30);
+            this.btnCategoryForm.Name = "btnCategoryForm";
+            this.btnCategoryForm.Size = new System.Drawing.Size(206, 48);
+            this.btnCategoryForm.TabIndex = 0;
+            this.btnCategoryForm.Text = "Kategoriler";
+            this.btnCategoryForm.UseVisualStyleBackColor = true;
+            this.btnCategoryForm.Click += new System.EventHandler(this.btnCategoryForm_Click);
             // 
             // panel3
             // 
@@ -299,25 +291,25 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "İş Bankası";
             // 
-            // groupBox1
+            // grpSon5BankaHareketi
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.lblBankProcess5);
-            this.groupBox1.Controls.Add(this.lblBankProcess4);
-            this.groupBox1.Controls.Add(this.lblBankProcess3);
-            this.groupBox1.Controls.Add(this.lblBankProcess2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.lblBankProcess1);
-            this.groupBox1.Location = new System.Drawing.Point(300, 258);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1005, 381);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Son 5 Banka Hareketi";
+            this.grpSon5BankaHareketi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.grpSon5BankaHareketi.Controls.Add(this.label10);
+            this.grpSon5BankaHareketi.Controls.Add(this.label9);
+            this.grpSon5BankaHareketi.Controls.Add(this.label8);
+            this.grpSon5BankaHareketi.Controls.Add(this.label6);
+            this.grpSon5BankaHareketi.Controls.Add(this.lblBankProcess5);
+            this.grpSon5BankaHareketi.Controls.Add(this.lblBankProcess4);
+            this.grpSon5BankaHareketi.Controls.Add(this.lblBankProcess3);
+            this.grpSon5BankaHareketi.Controls.Add(this.lblBankProcess2);
+            this.grpSon5BankaHareketi.Controls.Add(this.label4);
+            this.grpSon5BankaHareketi.Controls.Add(this.lblBankProcess1);
+            this.grpSon5BankaHareketi.Location = new System.Drawing.Point(300, 258);
+            this.grpSon5BankaHareketi.Name = "grpSon5BankaHareketi";
+            this.grpSon5BankaHareketi.Size = new System.Drawing.Size(1005, 381);
+            this.grpSon5BankaHareketi.TabIndex = 5;
+            this.grpSon5BankaHareketi.TabStop = false;
+            this.grpSon5BankaHareketi.Text = "Son 5 Banka Hareketi";
             // 
             // label10
             // 
@@ -429,6 +421,27 @@
             this.lblBankProcess1.TabIndex = 0;
             this.lblBankProcess1.Text = "Metin 1";
             // 
+            // lblBankaFormu
+            // 
+            this.lblBankaFormu.AutoSize = true;
+            this.lblBankaFormu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBankaFormu.ForeColor = System.Drawing.Color.White;
+            this.lblBankaFormu.Location = new System.Drawing.Point(12, 13);
+            this.lblBankaFormu.Name = "lblBankaFormu";
+            this.lblBankaFormu.Size = new System.Drawing.Size(121, 24);
+            this.lblBankaFormu.TabIndex = 2;
+            this.lblBankaFormu.Text = "Banka Formu";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(114)))), ((int)(((byte)(227)))));
+            this.panel2.Controls.Add(this.lblBankaFormu);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1320, 54);
+            this.panel2.TabIndex = 1;
+            // 
             // FrmBanks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -436,7 +449,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1320, 650);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpSon5BankaHareketi);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -448,16 +461,16 @@
             this.Text = "FrmBanks";
             this.Load += new System.EventHandler(this.FrmBanks_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpSon5BankaHareketi.ResumeLayout(false);
+            this.grpSon5BankaHareketi.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -465,16 +478,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button frmBillForm;
-        private System.Windows.Forms.Button frmBillingForm;
+        private System.Windows.Forms.Button btnCategoryForm;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnSettingsForm;
+        private System.Windows.Forms.Button btnDashboardForm;
+        private System.Windows.Forms.Button btnBankProcessForm;
+        private System.Windows.Forms.Button btnSpendingForm;
+        private System.Windows.Forms.Button btnBillingForm;
         private System.Windows.Forms.Button btnBanksForm;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblZiraatBankBalance;
@@ -484,7 +495,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblIsBankasiBalance;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpSon5BankaHareketi;
         private System.Windows.Forms.Label lblBankProcess1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblBankProcess2;
@@ -495,5 +506,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblBankaFormu;
+        private System.Windows.Forms.Panel panel2;
     }
 }

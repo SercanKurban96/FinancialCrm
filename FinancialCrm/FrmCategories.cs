@@ -1,26 +1,46 @@
-﻿using System;
+﻿using FinancialCrm.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinancialCrm.Models;
 
 namespace FinancialCrm
 {
-    public partial class FrmBilling : Form
+    public partial class FrmCategories : Form
     {
-        public FrmBilling()
+        public FrmCategories()
         {
             InitializeComponent();
         }
         FinancialCrmDbEntities db = new FinancialCrmDbEntities();
 
+        void CategoriesList()
+        {
+            var values = db.Categories.Select(x => new
+            {
+                x.CategoryID,
+                x.CategoryName
+            }).ToList();
+            dataGridView1.DataSource = values;
+        }
+
         void TextClear()
         {
-            txtBillID.Clear();
-            txtBillTitle.Clear();
-            txtBillAmount.Clear();
-            txtBillPeriod.Clear();
+            txtCategoryID.Clear();
+            txtCategoryName.Clear();
         }
-        private void FrmBilling_Load(object sender, EventArgs e)
+
+        private void btnCategoryList_Click(object sender, EventArgs e)
+        {
+            CategoriesList();
+        }
+
+        private void FrmCategories_Load(object sender, EventArgs e)
         {
             btnCategoryForm.Text = Localization.btnCategoryForm;
             btnBanksForm.Text = Localization.btnBanksForm;
@@ -29,58 +49,40 @@ namespace FinancialCrm
             btnBankProcessForm.Text = Localization.btnBankProcessForm;
             btnSettingsForm.Text = Localization.btnSettingsForm;
             btnExit.Text = Localization.btnExit;
-            lblFaturaFormu.Text = Localization.lblFaturaFormu;
-            lblfaturabaslik.Text = Localization.lblfaturabaslik;
-            lblfaturamiktar.Text = Localization.lblfaturamiktar;
-            lblfaturaperiyot.Text = Localization.lblfaturaperiyot;
+            lblCategoryName.Text = Localization.lblCategoryName;
+            lblkategoriformu.Text = Localization.lblkategoriformu;
 
-
-            var values = db.Bills.ToList();
-            dataGridView1.DataSource = values;
-
-            txtBillTitle.Focus();
+            CategoriesList();
         }
 
-        private void btnBillList_Click(object sender, EventArgs e)
+        private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            var values = db.Bills.ToList();
-            dataGridView1.DataSource = values;
-            txtBillTitle.Focus();
-        }
-
-        private void btnCreateBill_Click(object sender, EventArgs e)
-        {
-            if (txtBillTitle.Text == "" || txtBillAmount.Text == "" || txtBillPeriod.Text == "")
+            if (txtCategoryName.Text == "")
             {
                 MessageBox.Show(String.Format(Localization.alanlarbos), String.Format(Localization.uyari), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                string title = txtBillTitle.Text;
-                decimal amount = decimal.Parse(txtBillAmount.Text);
-                string period = txtBillPeriod.Text;
+                string categoryName = txtCategoryName.Text;
 
-                Bills bills = new Bills();
+                Categories categories = new Categories();
 
-                bills.BillTitle = title;
-                bills.BillAmount = amount;
-                bills.BillPeriod = period;
+                categories.CategoryName = categoryName;
 
-                db.Bills.Add(bills);
+                db.Categories.Add(categories);
                 db.SaveChanges();
+
                 MessageBox.Show(String.Format(Localization.eklendi), String.Format(Localization.bilgi), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                var values = db.Bills.ToList();
-                dataGridView1.DataSource = values;
-
+                CategoriesList();
                 TextClear();
-                txtBillTitle.Focus();
-            }       
+                txtCategoryName.Focus();
+            }         
         }
 
-        private void btnRemoveBill_Click(object sender, EventArgs e)
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            if (txtBillID.Text == "")
+            if (txtCategoryID.Text == "")
             {
                 MessageBox.Show(String.Format(Localization.silmedegerbos), String.Format(Localization.uyari), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -90,24 +92,23 @@ namespace FinancialCrm
                 dialogResult = MessageBox.Show(String.Format(Localization.secilendegersil), String.Format(Localization.uyari), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int id = int.Parse(txtBillID.Text);
-                    var removeValue = db.Bills.Find(id);
-                    db.Bills.Remove(removeValue);
+                    int id = int.Parse(txtCategoryID.Text);
+                    var deleteCategory = db.Categories.Find(id);
+
+                    db.Categories.Remove(deleteCategory);
                     db.SaveChanges();
                     MessageBox.Show(String.Format(Localization.silindi), String.Format(Localization.bilgi), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    var values = db.Bills.ToList();
-                    dataGridView1.DataSource = values;
-
+                    CategoriesList();
                     TextClear();
-                    txtBillTitle.Focus();
-                }
-            }           
+                    txtCategoryName.Focus();
+                }         
+            }        
         }
 
-        private void btnUpdateBill_Click(object sender, EventArgs e)
+        private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
-            if (txtBillID.Text == "")
+            if (txtCategoryID.Text == "")
             {
                 MessageBox.Show(String.Format(Localization.guncellemedegerbos), String.Format(Localization.uyari), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -117,39 +118,33 @@ namespace FinancialCrm
                 dialogResult = MessageBox.Show(String.Format(Localization.secilendegerguncelle), String.Format(Localization.uyari), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    string title = txtBillTitle.Text;
-                    decimal amount = decimal.Parse(txtBillAmount.Text);
-                    string period = txtBillPeriod.Text;
+                    string categoryName = txtCategoryName.Text;
 
-                    int id = int.Parse(txtBillID.Text);
-                    var values = db.Bills.Find(id);
+                    int id = int.Parse(txtCategoryID.Text);
+                    var updateCategory = db.Categories.Find(id);
 
-                    values.BillTitle = title;
-                    values.BillAmount = amount;
-                    values.BillPeriod = period;
+                    updateCategory.CategoryName = categoryName;
 
                     db.SaveChanges();
                     MessageBox.Show(String.Format(Localization.guncellendi), String.Format(Localization.bilgi), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    var values2 = db.Bills.ToList();
-                    dataGridView1.DataSource = values2;
-
+                    CategoriesList();
                     TextClear();
-                    txtBillTitle.Focus();
+                    txtCategoryName.Focus();
                 }
-            }         
-        }
-
-        private void btnBanksForm_Click(object sender, EventArgs e)
-        {
-            FrmBanks fr = new FrmBanks();
-            fr.Show();
-            this.Hide();
+            }      
         }
 
         private void btnCategoryForm_Click(object sender, EventArgs e)
         {
             FrmCategories fr = new FrmCategories();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnBanksForm_Click(object sender, EventArgs e)
+        {
+            FrmBanks fr = new FrmBanks();
             fr.Show();
             this.Hide();
         }
@@ -185,11 +180,6 @@ namespace FinancialCrm
             this.Hide();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnBankProcessForm_Click(object sender, EventArgs e)
         {
             FrmBankProcesses fr = new FrmBankProcesses();
@@ -208,10 +198,8 @@ namespace FinancialCrm
         {
             try
             {
-                txtBillID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtBillTitle.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtBillAmount.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtBillPeriod.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtCategoryID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtCategoryName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
             catch (Exception)
             {

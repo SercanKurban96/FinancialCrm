@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="rdbTurkish" xml:space="preserve">
+    <value>TÜRKÇE</value>
+  </data>
+  <data name="rdbEnglish" xml:space="preserve">
+    <value>İNGİLİZCE</value>
+  </data>
+  <data name="lblkullaniciadi" xml:space="preserve">
+    <value>Kullanıcı Adı:</value>
+  </data>
+  <data name="lblfinancialcrmproje" xml:space="preserve">
+    <value>Finansal CRM Projesi</value>
+  </data>
+  <data name="lblparola" xml:space="preserve">
+    <value>Parola:</value>
+  </data>
+  <data name="girisbasarili" xml:space="preserve">
+    <value>Başarılı bir şekilde giriş yaptınız.</value>
+  </data>
+  <data name="hosgeldiniz" xml:space="preserve">
+    <value>Hoş geldiniz!</value>
+  </data>
+  <data name="alanlarbos" xml:space="preserve">
+    <value>Alanlar boş bırakılamaz!</value>
+  </data>
+  <data name="uyari" xml:space="preserve">
+    <value>Uyarı!</value>
+  </data>
+  <data name="hata" xml:space="preserve">
+    <value>Hata!</value>
+  </data>
+  <data name="girisbasarisiz" xml:space="preserve">
+    <value>Hatalı kullanıcı adı veya parola!</value>
+  </data>
+  <data name="lbldashboardformu" xml:space="preserve">
+    <value>Dashboard / Genel Bakış Formu</value>
+  </data>
+  <data name="btnCategoryForm" xml:space="preserve">
+    <value>Kategoriler</value>
+  </data>
+  <data name="btnBanksForm" xml:space="preserve">
+    <value>Bankalar</value>
+  </data>
+  <data name="btnBillingForm" xml:space="preserve">
+    <value>Faturalar</value>
+  </data>
+  <data name="btnSpendingForm" xml:space="preserve">
+    <value>Giderler</value>
+  </data>
+  <data name="btnBankProcessForm" xml:space="preserve">
+    <value>Banka Hareketleri</value>
+  </data>
+  <data name="btnSettingsForm" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="btnExit" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="lbltoplambakiyem" xml:space="preserve">
+    <value>Toplam Bakiyem</value>
+  </data>
+  <data name="lblBillTitle" xml:space="preserve">
+    <value>Fatura Başlığı</value>
+  </data>
+  <data name="lblgelensonhavale" xml:space="preserve">
+    <value>Gelen Son Havale</value>
+  </data>
+  <data name="lblgrafikmetin1" xml:space="preserve">
+    <value>Bankalar ve banka hesaplarındaki para miktarlarına aşağıdaki grafikten ulaşabilirsiniz.</value>
+  </data>
+  <data name="lblgrafikmetin2" xml:space="preserve">
+    <value>Ödenen ve ödenmesi gereken fatura tutarlarına aşağıdaki grafikten ulaşabilirsiniz.</value>
+  </data>
+  <data name="lblBankaFormu" xml:space="preserve">
+    <value>Banka Formu</value>
+  </data>
+  <data name="grpSon5BankaHareketi" xml:space="preserve">
+    <value>Son 5 Banka Hareketi</value>
+  </data>
+  <data name="lblCategoryName" xml:space="preserve">
+    <value>Kategori Adı:</value>
+  </data>
+  <data name="lblkategoriformu" xml:space="preserve">
+    <value>Kategori Formu</value>
+  </data>
+  <data name="lblfaturabaslik" xml:space="preserve">
+    <value>Başlık:</value>
+  </data>
+  <data name="lblfaturamiktar" xml:space="preserve">
+    <value>Miktar:</value>
+  </data>
+  <data name="lblfaturaperiyot" xml:space="preserve">
+    <value>Periyot:</value>
+  </data>
+  <data name="lblFaturaFormu" xml:space="preserve">
+    <value>Fatura Formu</value>
+  </data>
+  <data name="lblGiderlerFormu" xml:space="preserve">
+    <value>Giderler Formu</value>
+  </data>
+  <data name="lblgideradi" xml:space="preserve">
+    <value>Gider Adı:</value>
+  </data>
+  <data name="lblmiktar" xml:space="preserve">
+    <value>Miktar:</value>
+  </data>
+  <data name="lbltarih" xml:space="preserve">
+    <value>Tarih:</value>
+  </data>
+  <data name="lblkategori" xml:space="preserve">
+    <value>Kategori:</value>
+  </data>
+  <data name="lblbankahareketleriformu" xml:space="preserve">
+    <value>Banka Hareketleri Formu</value>
+  </data>
+  <data name="lblaciklama" xml:space="preserve">
+    <value>Açıklama:</value>
+  </data>
+  <data name="lbltur" xml:space="preserve">
+    <value>Tür:</value>
+  </data>
+  <data name="lblbanka" xml:space="preserve">
+    <value>Banka:</value>
+  </data>
+  <data name="programdancikma" xml:space="preserve">
+    <value>Programdan çıkmak istiyor musunuz?</value>
+  </data>
+  <data name="cmbShowHide1" xml:space="preserve">
+    <value>Göster/Gizle</value>
+  </data>
+  <data name="lblayarlarformu" xml:space="preserve">
+    <value>Ayarlar Formu</value>
+  </data>
+  <data name="eklendi" xml:space="preserve">
+    <value>Başarılı bir şekilde sisteme eklendi.</value>
+  </data>
+  <data name="silindi" xml:space="preserve">
+    <value>Başarılı bir şekilde sistemden silindi.</value>
+  </data>
+  <data name="guncellendi" xml:space="preserve">
+    <value>Başarılı bir şekilde sistemde güncellendi.</value>
+  </data>
+  <data name="bilgi" xml:space="preserve">
+    <value>Bilgi</value>
+  </data>
+  <data name="silmedegerbos" xml:space="preserve">
+    <value>Lütfen silinecek bir değer seçiniz.</value>
+  </data>
+  <data name="secilendegersil" xml:space="preserve">
+    <value>Seçilen değeri silmek istiyor musunuz?</value>
+  </data>
+  <data name="guncellemedegerbos" xml:space="preserve">
+    <value>Lütfen güncellenecek bir değer seçiniz.</value>
+  </data>
+  <data name="secilendegerguncelle" xml:space="preserve">
+    <value>Seçilen değeri güncellemek istiyor musunuz?</value>
+  </data>
+  <data name="lblcrm" xml:space="preserve">
+    <value>Finansal CRM Projesi</value>
+  </data>
+</root>

@@ -23,6 +23,20 @@ namespace FinancialCrm
         int count = 0;
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
+            btnCategoryForm.Text = Localization.btnCategoryForm;
+            btnBanksForm.Text = Localization.btnBanksForm;
+            btnBillingForm.Text = Localization.btnBillingForm;
+            btnSpendingForm.Text = Localization.btnSpendingForm;
+            btnBankProcessForm.Text = Localization.btnBankProcessForm;
+            btnSettingsForm.Text = Localization.btnSettingsForm;
+            btnExit.Text = Localization.btnExit;
+            lblBillTitle.Text = Localization.lblBillTitle;
+            lbldashboardformu.Text = Localization.lbldashboardformu;
+            lblgelensonhavale.Text = Localization.lblgelensonhavale;
+            lbltoplambakiyem.Text = Localization.lbltoplambakiyem;
+            lblgrafikmetin1.Text = Localization.lblgrafikmetin1;
+            lblgrafikmetin2.Text = Localization.lblgrafikmetin2;
+
             //Toplam Bakiyeyi Görüntüleme
             var totalBalance = db.Banks.Sum(x => x.BankBalance);
             lblTotalBalance.Text = totalBalance.ToString() + " ₺";
@@ -99,6 +113,58 @@ namespace FinancialCrm
                 lblBillTitle.Text = "İnternet Faturası";
                 lblBillAmount.Text = internetBill.ToString() + " ₺";
             }
+        }
+
+        private void btnCategoryForm_Click(object sender, EventArgs e)
+        {
+            FrmCategories fr = new FrmCategories();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = MessageBox.Show(String.Format(Localization.programdancikma), String.Format(Localization.uyari), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnSpendingForm_Click(object sender, EventArgs e)
+        {
+            FrmSpendings fr = new FrmSpendings();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcessForm_Click(object sender, EventArgs e)
+        {
+            FrmBankProcesses fr = new FrmBankProcesses();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnDashboardForm_Click(object sender, EventArgs e)
+        {
+            FrmDashboard fr = new FrmDashboard();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnSettingsForm_Click(object sender, EventArgs e)
+        {
+            FrmSettings fr = new FrmSettings();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void btnBillingForm_Click(object sender, EventArgs e)
+        {
+            FrmBilling fr = new FrmBilling();
+            fr.Show();
+            this.Hide();
         }
     }
 }
