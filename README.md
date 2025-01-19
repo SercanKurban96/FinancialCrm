@@ -242,3 +242,51 @@ Buradan isterseniz grafiğin tipini ChartType kısmından, grafiğin ismini ise 
 ![image](https://github.com/user-attachments/assets/79abb0c6-81f0-4d68-8637-745ac9c2a938)
 
 İkinci grafik için gerekli kodlar bu şekildedir. Buradaki tek fark, eğer series2.ChartType kodu yazılmazsa, programı çalıştırdığımız zaman direkt Chart aracındaki gibi sütun grafiğini gösterecektir. Burada sadece grafiğin türünü değiştirmek için bu kodu kullandık.
+
+### Kalan Kısımlar İçin Eklemiş Olduğum Bazı Özellikler
+
+![image](https://github.com/user-attachments/assets/d4d4e512-cce4-4c23-b12d-0e57ec7e27c0)
+
+Programı çalıştırdığımız zaman karşımıza iki tane dil seçeneği gelmektedir. Dil ayarları yapmak için ilk olarak katmanımıza sağ tıklayıp Add kısmından New Item diyoruz.
+
+![image](https://github.com/user-attachments/assets/70af19c1-685a-4f0f-b814-c05a051a7791)
+
+Sağ üst tarafta yer alan arama çubuğuna res dediğimiz zaman karşımıza en altta Resources File çıkmaktadır. Burada ana dilimiz hangisi olacaksa (örneğin: Türkçe) ismini Localization olarak belirliyoruz. Uzantısı resx olacaktır. Ardından bir tane daha Resources File oluşturuyoruz ve bu kez eğer dilini İngilizce olarak ayarlamak istiyorsak Localization.en-US ismini vermemiz gerekecektir.
+
+![image](https://github.com/user-attachments/assets/3ccae41a-bef0-40bc-a399-f2c4b5fadef4)
+
+Burada örnek olarak birkaç tane isim oluşturdum. İlk olarak sol üst köşede bulunan + ikonuna tıklıyoruz.
+
+![image](https://github.com/user-attachments/assets/eac9f5ec-0ad3-4056-a4b8-1de03111b7d8)
+
+Ardından burada Name kısmına bir isim belirlememiz gerekecektir. Örneğin label etiketinde bir isim belirlediysek (örneğin: lblAmount) name kısmına lblAmount, Neutral value kısmına türkçesini yazıp Add diyoruz. Ardından en-US kısmı boş kalamayacağı için o kısmın ingilizcesini yazıyoruz.
+
+Formumuza geldiğimizde default olarak Türkçe seçili çıkacaktır.
+
+![image](https://github.com/user-attachments/assets/e6a13bec-e1d4-448f-8968-91122f163392)
+
+Burada seçeceğimiz dile göre Login formuna atacaktır. Eğer Türkçe dili seçiliyse burada Localization class'ını kullanıyoruz.
+
+![image](https://github.com/user-attachments/assets/027e6205-a111-443f-a67c-a618463e45d1)
+
+Çalıştırdığımız zaman dilini İngilizce olarak seçtiğimizde karşımıza (her alan olmasa da) İngilizce yazılar çıkacaktır.
+
+![image](https://github.com/user-attachments/assets/0b250dca-cd4a-4ced-ba35-ff7d050f74f2)
+
+Alanı boş bıraktığımızda tekrardan İngilizce olarak uyarı gelecektir. Bu değeri yapmak için;
+
+![image](https://github.com/user-attachments/assets/82478c1a-4f58-4164-81a7-094bfffd3efd)
+
+Resources kısmından burada alanlarbos isminde rastgele bir isim verdim. Burada istediğiniz ismi verebilirsiniz.
+
+![image](https://github.com/user-attachments/assets/790c4177-a709-40b4-9f0a-65d7e368f388)
+
+Giriş için kodlar bu şekildedir. Burada İngilizce mesaj vereceğimiz zaman String.Format türünde kullanıyoruz. String.Format işleminden sonra Localization sınıfını kullanarak verdiğimiz isim hangisiyse onu ekliyoruz.
+
+![image](https://github.com/user-attachments/assets/cfa11e14-0682-425c-af07-b043c6423112)
+
+Dashboard kısmında gördüğünüz gibi alanların neredeyse hepsi İngilizce olarak karşımıza çıkmaktadır.
+
+
+
+✅ Bu proje sayesinde yazılım becerilerimi pekiştirmeme, C# ve diğer tüm veri tabanlara (MSSQL, PostgreSQL, MongoDb) hakimiyetimi arttırmama yardımcı oldu. Bu eğitimde bana yol gösteren Murat Yücedağ hocama çok teşekkür ediyorum.
